@@ -1,0 +1,71 @@
+{
+    "name": "thecodechef/laravel-paper-make-command",
+    "description": "A simple & straight forward artisan make command for Laravel Paper.",
+    "license": "MIT",
+    "keywords": [
+        "thecodechef",
+        "laravel",
+        "laravel-paper",
+        "make-command"
+    ],
+    "authors": [
+        {
+            "name": "Jeremy Bolding",
+            "email": "cyberchefjay@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/thecodechef/laravel-paper-make-command",
+    "support": {
+        "issues": "https://github.com/thecodechef/laravel-paper-make-command/issues",
+        "source": "https://github.com/thecodechef/laravel-paper-make-command"
+    },
+    "require": {
+        "php": "^8.4||^8.5",
+        "illuminate/support": "^12.0||^13.0"
+    },
+    "require-dev": {
+        "laravel/pao": "^1.1",
+        "laravel/pint": "^1.30",
+        "pestphp/pest": "^5.1",
+        "pestphp/pest-plugin-laravel": "^5.0",
+        "rector/rector": "^2.6",
+        "rector/swiss-knife": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelPaper\\MakeCommand\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelPaper\\MakeCommand\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+          "@prepare"
+        ],
+        "prepare" : [
+          "@lint"
+        ],
+        "lint": [
+            "vendor/bin/pint --parallel"
+        ]
+    },
+    "extras": {
+        "laravel": {
+            "providers": [
+                "LaravelPaper\\MakeCommand\\MakeCommandServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

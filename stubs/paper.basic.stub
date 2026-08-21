@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use JacobJoergensen\LaravelPaper\Attributes\ContentPath;
+use JacobJoergensen\LaravelPaper\Attributes\Driver;
+use JacobJoergensen\LaravelPaper\Paper;
+
+#[Driver('[paper-driver]')]
+#[ContentPath('[paper-path]')]
+class [paper-model] extends Model
+{
+	use Paper;
+}
